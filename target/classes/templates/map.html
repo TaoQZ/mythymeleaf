@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1px">
+    <thead>
+        <tr>
+            <th>序号</th>
+            <th>KEY</th>
+            <th>value.name</th>
+            <th>value.age</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="user,userStatus:${map}">
+            <td th:text="${userStatus.index}+1"></td>
+            <td th:text="${user.key}"></td><!-- key-->
+            <td th:text="${user.value.name}"></td><!-- value-->
+            <td th:text="${user.value.age}"></td><!-- value-->
+        </tr>
+    </tbody>
+</table>
+
+<ul th:each="user : ${map}">
+    <li th:each="every : ${user}" th:text="${every.key}" ></li>
+    <li th:each="every : ${user}" th:text="${every.value.name}"></li>
+    <li th:each="every : ${user}" th:text="${every.value.age}"></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- 条件成立执行 -->
+<span th:if="${age >= 18}" >
+        成年
+    </span>
+<!-- 条件不成立执行   -->
+<span th:unless="${age >= 18}">
+        未成年
+    </span>
+</body>
+</html>
